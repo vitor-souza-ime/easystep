@@ -1,0 +1,5 @@
+; Este exemplo irá demonstrar a utilização do comando
+; pulsout. A ideia é oscilar 10 vezes em um intervalo de
+; tempo de 255 ms uma carga conectada na saída do IO7
+
+pulsout (255,10)
