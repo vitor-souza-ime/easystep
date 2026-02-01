@@ -1,0 +1,13 @@
+; Faremos com que o LED pisque somente
+; 10 vezes neste exemplo utilizando a estrutura
+; for ... next
+
+dirpin = %00000000    ; configura a direção dos pinos como saída
+
+for b1 = 1 to 10 step 1   ; laço de 1 até 10
+    ios = %11111111      ; carrega um valor na saída de I/O
+    delay_seg (1)        ; aguarda 1 segundo
+
+    ios = %00000000      ; carrega um valor na saída de I/O
+    delay_seg (1)        ; aguarda 1 segundo
+next
