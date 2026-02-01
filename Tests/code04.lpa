@@ -1,0 +1,17 @@
+; A intenção deste projeto
+; é fazer com que o LED oscile
+; utilizando para isso a estrutura
+; do...loop until
+
+dirpin = %00000000    ; configura os pinos como saída
+b1 = 0                ; inicializa a variável b1
+
+do
+    toggle             ; inverte o estado dos pinos de I/O
+    delay_seg (1)      ; aguarda 1 segundo
+
+    toggle             ; inverte o estado dos pinos de I/O
+    delay_seg (1)      ; aguarda 1 segundo
+
+    inc (b1)           ; incrementa a variável b1
+loop until b1 = 10     ; laço até que b1 seja igual a 10
