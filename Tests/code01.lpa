@@ -1,0 +1,5 @@
+; Este programa visa carregar um valor binário
+; na saída da EasyStep
+
+dirpin = %00000000    ; configura os pinos como saída
+ios    = %10101010    ; aciona as saídas de IO
