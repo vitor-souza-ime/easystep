@@ -1,0 +1,30 @@
+; Code 07
+; Este exemplo irá apresentar a utilização da
+; recepção serial assim como do controle
+; de PWM através da USART
+
+dirpin = %00000000    ; configura a direção da porta
+
+teste:
+
+    if rxdata = "a" then      ; se recebeu caractere...
+        pwm (50)              ; configura o PWM
+    end if                    ; fim do se
+
+    if rxdata = "b" then
+        pwm (100)
+    end if
+
+    if rxdata = "c" then
+        pwm (150)
+    end if
+
+    if rxdata = "d" then
+        pwm (200)
+    end if
+
+    if rxdata = "e" then
+        pwm (250)
+    end if
+
+    goto teste                ; retorna para teste
