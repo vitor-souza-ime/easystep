@@ -1,0 +1,26 @@
+; A intenção deste projeto
+; é demonstrar a utilização do gosub
+; para oscilar um LED
+
+dirpin = %00000000    ; configura os pinos como saída
+
+loop:
+
+    gosub liga_led        ; chama a rotina liga_led
+    gosub aguarda_tempo  ; chama a rotina para aguardar um tempo
+    gosub desliga_led     ; chama a rotina para desligar o LED
+    gosub aguarda_tempo  ; chama a rotina para aguardar um tempo
+
+    goto loop             ; volta para loop
+
+liga_led:
+    high 8                ; liga a saída 8
+    return                ; retorna
+
+desliga_led:
+    low 8                 ; desliga a saída 8
+    return                ; retorna
+
+aguarda_tempo:
+    delay_seg (1)         ; aguarda 1 segundo
+    return                ; retorna
