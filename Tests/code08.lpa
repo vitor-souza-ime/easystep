@@ -1,0 +1,17 @@
+; Neste exemplo será apresentado os passos
+; para se desenvolver um contador com o display
+; e uma entrada de I/O
+
+dirpin = %00000001        ; configura a direção do pino
+inic display              ; inicializa o display
+display (1,1,"***Contador***") ; mostra uma mensagem no display
+
+loop:
+
+    if io1 = 1 then            ; se a entrada estiver pressionada
+        inc (w1)               ; incrementa a variável
+        display (2,5,w1)       ; mostra o valor no display
+        waitio1 (0)            ; aguarda o botão ser liberado
+    end if
+
+    goto loop                  ; volta para o loop
