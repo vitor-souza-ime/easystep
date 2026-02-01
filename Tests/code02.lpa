@@ -1,0 +1,15 @@
+; A ideia deste programa é
+; criar um pisca-pisca em todos
+; os pinos de I/O do microcontrolador
+
+dirpin = %00000000    ; configura a direção dos pinos como saída
+
+repete_:
+
+    ios = %11111111   ; carrega nível alto em todos os I/Os
+    delay_seg (1)     ; aguarda 1 segundo
+
+    ios = %00000000   ; carrega nível baixo em todos os I/Os
+    delay_seg (1)     ; aguarda 1 segundo
+
+    goto repete_      ; retorna ao início do laço
